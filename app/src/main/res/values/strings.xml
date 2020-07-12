@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Almost Chat</string>
+    <string name="input_hint">Write your awesome text here</string>
+    <string name="action_send">Send</string>
+    <string name="action_bold">Bold</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_clear_format">Clear Format</string>
+    <string name="action_italic">Italic</string>
+    <string name="action_strike_through">Strike Through</string>
+    <string name="empty_disclaimer">Type your text and then click in the send button to start</string>
+
+    <string-array name="answers">
+        <item>That is true</item>
+        <item>LoL</item>
+        <item>I do agree</item>
+        <item>Tell me more</item>
+        <item>Don\'t worry about that</item>
+    </string-array>
+</resources>

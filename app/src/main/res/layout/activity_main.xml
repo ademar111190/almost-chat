@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/main_menu"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/message_received" />
+
+    <ImageView
+        android:id="@+id/empty_icon"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_forum"
+        app:layout_constraintBottom_toTopOf="@+id/empty_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/list"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/empty_text"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:text="@string/empty_disclaimer"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/empty_icon" />
+
+    <ImageButton
+        android:id="@+id/bold"
+        style="@style/ActionButton"
+        android:contentDescription="@string/action_bold"
+        android:src="@drawable/ic_bold"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintEnd_toStartOf="@+id/italic"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/italic"
+        style="@style/ActionButton"
+        android:contentDescription="@string/action_italic"
+        android:src="@drawable/ic_italic"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintEnd_toStartOf="@+id/strike_through"
+        app:layout_constraintStart_toEndOf="@+id/bold" />
+
+    <ImageButton
+        android:id="@+id/strike_through"
+        style="@style/ActionButton"
+        android:contentDescription="@string/action_strike_through"
+        android:src="@drawable/ic_strike_through"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintEnd_toStartOf="@+id/clear_format"
+        app:layout_constraintStart_toEndOf="@+id/italic" />
+
+    <ImageButton
+        android:id="@+id/clear_format"
+        style="@style/ActionButton"
+        android:contentDescription="@string/action_clear_format"
+        android:src="@drawable/ic_clear_format"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/strike_through" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:autofillHints="null"
+        android:hint="@string/input_hint"
+        android:imeOptions="actionSend"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/send"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <requestFocus />
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/send"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/action_send"
+        android:src="@drawable/ic_send"
+        app:layout_constraintBottom_toBottomOf="@+id/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/input"
+        app:layout_constraintTop_toTopOf="@+id/input" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
